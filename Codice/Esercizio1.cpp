@@ -1,37 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <stdio.h>
-#include <string.h>
-
-using namespace std;
-
-
-class Student {
-    String name;
-    String surname;
-    String id;
-
-    student(String n, String s, int id){
-        this.name = n;
-        this.surname = s;
-        this.id = id;
-    }
-
-    String getName(){
-        return this.name;
-    }
-
-    String getSurname(){
-        return this.surname;
-    }
-
-    String getId(){
-        return this.id;
-    }
-
-}
-
-
+#include "class.h"
 
 void testF(int d0, int d1, int i, double& ris1, double& ris2) {
     double a = (d0 + 1) * pow(10, i), b = (d1 + 1) * pow(10, 20), c = -b;
