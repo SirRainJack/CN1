@@ -1,39 +1,8 @@
-#include <iostream>
+#include "class.h"
 #include <math.h>
 #include <stdio.h>
-#include <string.h>
 
 using namespace std;
-
-
-class Studente {
-    
-    private:
-    string name;
-    string surname;
-    string id;
-
-    public:
-    Studente(string n, string s, string id){
-        this->name = n;
-        this->surname = s;
-        this->id = id;
-    }
-
-    string getName(){
-        return this->name;
-    }
-
-    string getSurname(){
-        return this->surname;
-    }
-
-    string getId(){
-        return this->id;
-    }
-
-};
-
 
 
 
@@ -46,16 +15,24 @@ void testF(int d0, int d1, int i, double& ris1, double& ris2) {
 
 
 int main() {
-    
+    const int N = 2; //numero Studenti
+
     //dichiarazione degli sviluppatori
-    Studente S1 = Studente ("Davide", "Manca", "4475879");
-    Studente S2 = Studente ("Antonio", "Scano", "4520672");
+    Studente s[N] = {
+        Studente ("Davide", "Manca", "4475879"),
+        Studente ("Antonio", "Scano", "4520672")
+    };
     
     //stampa dati sviluppatori
-    cout<< "Progetto a cura di: \n";
-    cout<< S1.getName() << "\t" << S1.getSurname() << "\t codice di matricola: "<< S1.getId()<< "\n\n";
-    cout<< S2.getName() << "\t" << S2.getSurname() << "\t codice di matricola: "<< S2.getId()<< "\n\n";
-
+    cout<< "\n\n\n=========================\n";
+    cout<< "|| PROGETTO A CURA DI: ||\n";
+    cout<< "============================================================\n";
+    for(int i= 0; i<N; ++i){
+        cout<< "\t"<< s[i].getName() << "\t" << s[i].getSurname() << "\t codice di matricola: "<< s[i].getId()<< "\n";
+        cout<< "============================================================\n";
+    }
+    
+    cout<< "\n\n\n\n",
     cout<< "=====================================================================================\n";
     cout<< "==================================== ESERCIZIO 1 ====================================\n";
     cout<< "=====================-------------------------------------------=====================\n";
@@ -66,8 +43,8 @@ int main() {
 
     //prendiamo in considerazione le ultime due cifre della matricola dello studente Davide Manca, ovvero 7 e 9:
     string d0, d1;
-    d0 = S1.getId().at(6);
-    d1 = S1.getId().at(5);
+    d0 = s[0].getId().at(6);
+    d1 = s[0].getId().at(5);
   
     int lastNumber = stoi(d0); 
     int penultimateNumber = stoi(d1);
