@@ -47,7 +47,6 @@ void testF(int d0, int d1, int i, double& ris1, double& ris2) {
 
 int main() {
     
-
     //dichiarazione degli sviluppatori
     Studente S1 = Studente ("Davide", "Manca", "4475879");
     Studente S2 = Studente ("Antonio", "Scano", "4520672");
@@ -57,18 +56,18 @@ int main() {
     cout<< S1.getName() << "\t" << S1.getSurname() << "\t codice di matricola: "<< S1.getId()<< "\n\n";
     cout<< S2.getName() << "\t" << S2.getSurname() << "\t codice di matricola: "<< S2.getId()<< "\n\n";
 
-    cout<< "=====================================================================================";
-    cout<< "==================================== ESERCIZIO 1 ====================================";
-    cout<< "=====================-------------------------------------------=====================";
-    cout<< "================================= Codici matricole ==================================";
-    cout<< "=====================================================================================";
+    cout<< "=====================================================================================\n";
+    cout<< "==================================== ESERCIZIO 1 ====================================\n";
+    cout<< "=====================-------------------------------------------=====================\n";
+    cout<< "================================= Codici matricole ==================================\n";
+    cout<< "=====================================================================================\n";
 
 
 
     //prendiamo in considerazione le ultime due cifre della matricola dello studente Davide Manca, ovvero 7 e 9:
     string d0, d1;
-    d0 = Davide.getId().at(6);
-    d1 = Davide.getId().at(5);
+    d0 = S1.getId().at(6);
+    d1 = S1.getId().at(5);
   
     int lastNumber = stoi(d0); 
     int penultimateNumber = stoi(d1);
