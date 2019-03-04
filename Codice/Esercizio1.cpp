@@ -1,4 +1,36 @@
-#include "class.h"
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+
+using namespace std;
+
+
+class Studente {
+    
+        string name;
+        string surname;
+        string id;
+        public:
+        Studente(string n, string s, string id){
+            this->name = n;
+            this->surname = s;
+            this->id = id;
+        }
+
+        string getName(){
+            return this->name;
+        }
+
+        string getSurname(){
+            return this->surname;
+        }
+
+        string getId(){
+            return this->id;
+        }
+
+};
 
 void testF(int d0, int d1, int i, double& ris1, double& ris2) {
     double a = (d0 + 1) * pow(10, i), b = (d1 + 1) * pow(10, 20), c = -b;
@@ -11,16 +43,13 @@ void testF(int d0, int d1, int i, double& ris1, double& ris2) {
 int main() {
     
 
-    //project owners declaration;
-    const int N= 2;
-    Student students[N];
-    students[0] ("Davide", "Manca", "S4475879");
-    students[1] ("Antonio", "Scano", "S4520672");
-
-    //project owners output;
-    cout<< "Progetto a cura di: \n"
-    for(int i=0; i<N; ++i)
-        cout<< students[i].getName() << "\t" <<students[i].getSurname() << "\t codice di matricola: "<< students[i].getId()<< "\n\n";
+    //dichiarazione degli sviluppatori;
+    Studente Davide = Studente ("Davide", "Manca", "4475879");
+    Studente Antonio = Studente ("Antonio", "Scano", "4520672");
+    
+    cout<< "Progetto a cura di: \n";
+    cout<< Davide.getName() << "\t" << Davide.getSurname() << "\t codice di matricola: "<< Davide.getId()<< "\n\n";
+    cout<< Antonio.getName() << "\t" << Antonio.getSurname() << "\t codice di matricola: "<< Antonio.getId()<< "\n\n";
 
     cout<< "=====================================================================================";
     cout<< "==================================== ESERCIZIO 1 ====================================";
@@ -30,19 +59,21 @@ int main() {
 
 
 
-    //exercise 1 begin:
-    int d0, d1;
-    d0= getId().at(7);
-    d1= getId().at(6);
+    //prendiamo in considerazione le ultime due cifre della matricola dello studente Davide Manca, ovvero 7 e 9:
+    string d0, d1;
+    d0 = Davide.getId().at(6);
+    d1 = Davide.getId().at(5);
+  
+    int lastNumber = stoi(d0); 
+    int penultimateNumber = stoi(d1);
 
-    cout<< "d0: "<< d0;
-    cout<< "d1: "<< d1;
-
-    cout<< "calling testFunction("<< d0<< ", "<< d1<< ");"
+    cout<< "\n\nUltima cifra (lastNumber): "<< d0 << "\nPenultima cifra (penultimateNumber): "<< d1;
+    
+    cout << "\nRisultato dopo chiamata funzione testF\n\n";
 
     double ris1 = 0.0, ris2 = 0.0;
     for(int i = 0; i < 20; ++i) {
-        sv(d0, d1, i, ris1, ris2);
+        testF(lastNumber, penultimateNumber, i, ris1, ris2);
         cout << "Prima expr (a+b)+c con i = " << i << " e' uguale a " << ris1 << endl;
         cout << "Seconda expr a+(b+c) con i = " << i << " e' uguale a " << ris2 << endl << endl;
     }	
