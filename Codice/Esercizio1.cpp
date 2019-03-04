@@ -8,29 +8,35 @@ using namespace std;
 
 class Studente {
     
-        string name;
-        string surname;
-        string id;
-        public:
-        Studente(string n, string s, string id){
-            this->name = n;
-            this->surname = s;
-            this->id = id;
-        }
+    private:
+    string name;
+    string surname;
+    string id;
 
-        string getName(){
-            return this->name;
-        }
+    public:
+    Studente(string n, string s, string id){
+        this->name = n;
+        this->surname = s;
+        this->id = id;
+    }
 
-        string getSurname(){
-            return this->surname;
-        }
+    string getName(){
+        return this->name;
+    }
 
-        string getId(){
-            return this->id;
-        }
+    string getSurname(){
+        return this->surname;
+    }
+
+    string getId(){
+        return this->id;
+    }
 
 };
+
+
+
+
 
 void testF(int d0, int d1, int i, double& ris1, double& ris2) {
     double a = (d0 + 1) * pow(10, i), b = (d1 + 1) * pow(10, 20), c = -b;
@@ -39,17 +45,17 @@ void testF(int d0, int d1, int i, double& ris1, double& ris2) {
 }
 
 
-
 int main() {
     
 
-    //dichiarazione degli sviluppatori;
-    Studente Davide = Studente ("Davide", "Manca", "4475879");
-    Studente Antonio = Studente ("Antonio", "Scano", "4520672");
+    //dichiarazione degli sviluppatori
+    Studente S1 = Studente ("Davide", "Manca", "4475879");
+    Studente S2 = Studente ("Antonio", "Scano", "4520672");
     
+    //stampa dati sviluppatori
     cout<< "Progetto a cura di: \n";
-    cout<< Davide.getName() << "\t" << Davide.getSurname() << "\t codice di matricola: "<< Davide.getId()<< "\n\n";
-    cout<< Antonio.getName() << "\t" << Antonio.getSurname() << "\t codice di matricola: "<< Antonio.getId()<< "\n\n";
+    cout<< S1.getName() << "\t" << S1.getSurname() << "\t codice di matricola: "<< S1.getId()<< "\n\n";
+    cout<< S2.getName() << "\t" << S2.getSurname() << "\t codice di matricola: "<< S2.getId()<< "\n\n";
 
     cout<< "=====================================================================================";
     cout<< "==================================== ESERCIZIO 1 ====================================";
