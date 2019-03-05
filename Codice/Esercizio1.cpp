@@ -24,22 +24,20 @@ int main() {
     };
     
     //stampa dati sviluppatori
-    cout<< "\n\n\n=========================\n";
-    cout<< "|| PROGETTO A CURA DI: ||\n";
-    cout<< "============================================================\n";
-    for(int i= 0; i<N; ++i){
-        cout<< "\t"<< s[i].getName() << "\t" << s[i].getSurname() << "\t codice di matricola: "<< s[i].getId()<< "\n";
-        cout<< "============================================================\n";
+    cout << "\n\n\n=========================\n";
+    cout << "|| PROGETTO A CURA DI: ||\n";
+    cout << "============================================================\n";
+    for(int i = 0; i < N; ++i){
+        cout << "\t" << s[i].getName() << "\t" << s[i].getSurname() << "\t codice di matricola: "<< s[i].getId()<< "\n";
+        cout << "============================================================\n";
     }
     
-    cout<< "\n\n\n\n",
-    cout<< "=====================================================================================\n";
-    cout<< "==================================== ESERCIZIO 1 ====================================\n";
-    cout<< "=====================-------------------------------------------=====================\n";
-    cout<< "================================= Codici matricole ==================================\n";
-    cout<< "=====================================================================================\n";
-
-
+    cout << "\n\n",
+    cout << "=====================================================================================\n";
+    cout << "==================================== ESERCIZIO 1 ====================================\n";
+    cout << "=====================-------------------------------------------=====================\n";
+    cout << "================================= Codici matricole ==================================\n";
+    cout << "=====================================================================================\n";
 
     //prendiamo in considerazione le ultime due cifre della matricola dello studente Davide Manca, ovvero 7 e 9:
     string d0, d1;
@@ -49,7 +47,7 @@ int main() {
     int lastNumber = stoi(d0); 
     int penultimateNumber = stoi(d1);
 
-    cout<< "\n\nUltima cifra (lastNumber): "<< d0 << "\nPenultima cifra (penultimateNumber): "<< d1;
+    cout << "\n\nUltima cifra (lastNumber): "<< d0 << "\nPenultima cifra (penultimateNumber): "<< d1;
     
     cout << "\nRisultato dopo chiamata funzione testF\n\n";
 
